@@ -9,6 +9,9 @@ class Tablero:
         self.color_secreto = []
         self.turnos = []
     
+    def definir_color(self,color):
+        self.color_secreto = color
+
     
 
                     
