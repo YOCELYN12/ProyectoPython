@@ -12,6 +12,12 @@ class Tablero:
     def definir_color(self,color):
         self.color_secreto = color
 
+    def validar_ganador(self,intento):
+        retroalimentacion = []
+        copia_color = self.color_secreto.copy()
+        for i in range(4):
+            if intento[1] == copia_color[1]:
+                
     
 
                     
