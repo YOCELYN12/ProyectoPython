@@ -2,18 +2,18 @@ import random
 
 class Jugador:
 
-     lista = [ "red", "green", "yellow", "blue"]
-     def __init__(self, es_el_jugador = True):
-        self.es_el_jugador = es_el_jugador
+     lista = [ "r", "g", "y", "b"]
+     def __init__(self, jugador1 = True):
+        self.jugador1 = jugador1
       
       
 class Creador(Jugador):
       def crea_codigo(self):
-            if self.es_el_jugador:
-                  color_codigo = input("INGRESE EL CODIGO DE COLORES:").strip.split()
+            if self.jugador1:
+                  color_codigo = input("INGRESE EL CODIGO DE COLORES:").strip().split()
             else:
                   color_codigo = random.choices(self.lista, k=4)
-                  return color_codigo
+            return color_codigo
             
 class Adivinador(Jugador):
       def adivinador(self):    
