@@ -26,6 +26,25 @@ class Tablero:
                 retroalimentacion.append("color_blanco")
         return retroalimentacion
 
+    def mostrar_tabla(self):
+        for intento,retroalimentacion in self.turnos:
+            intento_jugado = " ".join([self.color[color_jugado] + "o" + attr("reset") for color_jugado in intento])
+            
+            retroalimentacion_jugada = " ".join([
+                fg(2) + "o" +attr("reset") if retro_adivina == "color_verde"
+
+                else fg(3) + "o" + attr("reset") if retro_adivina == "color_amarillo"
+
+                else "o"
+
+                for retro_adivina in retroalimentacion
+            ])
+
+        print(f"{intento_jugado}|{retroalimentacion_jugada}")
+
+    
+    def actualizar_tablero(self,intento,retroalimentacion):
+        self.turnos.append((intento,retroalimentacion))
 
 
             
