@@ -14,6 +14,7 @@ class Creador(Jugador):
             else:
                   color_codigo = random.choices(self.lista, k=4)
                   return color_codigo
+            
 class Adivinador(Jugador):
       def adivinador(self):    
             if self.jugador1:
