@@ -1,8 +1,4 @@
 import random 
-#from colored import fg,attr
-
-
-
 
 class Jugador:
 
