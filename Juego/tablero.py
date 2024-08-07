@@ -1,4 +1,3 @@
-
 from colored import fg,attr
 
 class Tablero:
@@ -45,6 +44,7 @@ class Tablero:
     
     def actualizar_tablero(self,intento,retroalimentacion):
         self.turnos.append((intento,retroalimentacion))
+
 
 
             

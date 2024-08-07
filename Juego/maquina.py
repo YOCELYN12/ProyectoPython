@@ -17,7 +17,8 @@ class Jugar:
             self.creador_codigo = Creador(False)
             self.adivinador_codigo = Adivinador(True)
         self.tablero.definir_color(self.creador_codigo.crea_codigo())
-def jugadas_turnos(self):
+        
+    def jugadas_turnos(self):
         for turnos in range(12):
             intento = self.adivinador_codigo.adivinador()
             retroalimentacion = self.tablero.comprobar_color(intento)
@@ -30,7 +31,8 @@ def jugadas_turnos(self):
         
         print("Tus intentos se han agotado")
 
-def iniciar_juego(self):
+    
+    def iniciar_juego(self):
         self.elegir_rol()
         self.jugadas_turnos()
 
