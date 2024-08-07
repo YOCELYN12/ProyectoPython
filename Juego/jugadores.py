@@ -1,23 +1,27 @@
 import random 
-from colored import fg,attr
-
-class Jugador_adivinador:
-      def __init__(self):
-            self.intento1 = []
-             
-color = {"red", "blanco", "amarillo", "verde"}
-print(f" el color es{color}")
+#from colored import fg,attr
 
 
 
-nombre_jugador = input("A continuacion, ingrese su nombre:")
-print(f"{nombre_jugador} tienes 12 intentos, la metodologia del juego es la siguiente tendras 2 opcines de juego, eres el creador del codigo, o el adivinador, si deseas ser el creador del codigo deberas proporcinar el codigo secreto,  que en este caso son los 4 colores, que la computadora intentara adivinar. Si deseas ser el adivinador el programa generarara un codigo secreto aleatorio para que intentes adivinar. ")
 
-tipo_de_juego = input("Ingresa el modo en el que quieres jugar, (Creador de codigo) o (Adivinador):")
+class Jugador:
 
-if tipo_de_juego == "Adivinador":
-      print("hola")
-elif tipo_de_juego == "Creador de codigo":
-      print("funciona")
-
-    
+     lista = [ "red", "green", "yellow", "blue"]
+     def __init__(self, es_el_jugador = True):
+        self.es_el_jugador = es_el_jugador
+      
+      
+class Creador(Jugador):
+      def crea_codigo(self):
+            if self.es_el_jugador:
+                  color_codigo = input("INGRESE EL CODIGO DE COLORES:").strip.split()
+            else:
+                  color_codigo = random.choices(self.lista, k=4)
+                  return color_codigo
+class Adivinador(Jugador):
+      def adivinador(self):    
+            if self.jugador1:
+                  color_codigo = input("Ingrese el codigo de colores a adivinar:").strip().split()
+            else: 
+                  color_codigo = random.choices(self.lista,k=4)
+            return color_codigo
